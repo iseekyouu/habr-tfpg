@@ -9,6 +9,7 @@ const start = async () => {
     try {
         await app.listen({
             port: 3000,
+            host: 'localhost',
         });
     }
     catch (err) {
