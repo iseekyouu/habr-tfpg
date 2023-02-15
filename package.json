@@ -1,0 +1,33 @@
+{
+  "name": "habr-tfpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "export NODE_ENV=development TS_NODE_BASEURL=./dist && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"tsc -w\" \"nodemon\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iseekyouu/habr-tfpg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iseekyouu/habr-tfpg/issues"
+  },
+  "homepage": "https://github.com/iseekyouu/habr-tfpg#readme",
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "fastify": "^4.13.0"
+  }
+}
