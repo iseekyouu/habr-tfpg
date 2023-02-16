@@ -23,10 +23,12 @@ const grpcServerOptions = {
 };
 
 const grpcServerPlugin = fp(async (fastify) => {
+  // load proto files from directory
   const packageDefinition = protoLoader.loadSync([join(__dirname, '../proto/example.proto')], grpcServerOptions);
   const proto = grpc.loadPackageDefinition(packageDefinition) as unknown as ProtoGrpcType;
   const grpcServer = new grpc.Server();
 
+  // mapping between handlers and rpc services
   grpcServer.addService(proto.example.UserService.service, {
     GetUsers: async (
       req: grpc.ServerUnaryCall<GetUsersRequest__Output, GetUsersResponse>,
@@ -55,6 +57,7 @@ const grpcServerPlugin = fp(async (fastify) => {
       },
     );
   }
+
   fastify.decorate('grpcServer', { start });
 });
 
