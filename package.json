@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "dev": "export NODE_ENV=development TS_NODE_BASEURL=./dist && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"tsc -w\" \"nodemon\""
+    "dev": "export NODE_ENV=development TS_NODE_BASEURL=./dist && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"tsc -w\" \"nodemon\"",
+    "gen-proto": "$(npm bin)/proto-loader-gen-types --longs=String --enums=String  --oneofs --grpcLib=@grpc/grpc-js --outDir=src/proto/interfaces proto/*.proto"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,8 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.8.9",
+    "@grpc/proto-loader": "^0.7.5",
     "@prisma/client": "^4.10.1",
     "fastify": "^4.13.0",
     "fastify-plugin": "^4.5.0",

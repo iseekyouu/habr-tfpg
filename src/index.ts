@@ -14,6 +14,8 @@ const start = async () => {
       host: 'localhost',
     });
 
+    app.grpcServer.start();
+
     await main(app.prisma);
   } catch (err) {
     app.log.error(err);
