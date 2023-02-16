@@ -1,5 +1,5 @@
 import { buildApp, AppOptions } from './app';
-import { main } from './services';
+import { main } from './service';
 
 const options: AppOptions = {
   logger: true,
