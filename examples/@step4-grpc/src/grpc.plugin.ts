@@ -59,3 +59,4 @@ const grpcServerPlugin = fp(async (fastify) => {
 });
 
 export { grpcServerPlugin };
+

@@ -7,4 +7,5 @@ async function main(prisma: PrismaClient) {
   console.log({ users_count: usersCount });
 
 }
+
 export { main };
